@@ -1,7 +1,7 @@
 #HSLIDE
 # Java
 lecture 3
-## Basics
+## Generics & Collections
 
 
 #HSLIDE
@@ -272,8 +272,8 @@ instance.foo("string value");
 class Clazz<T> { }
 ```
  
-```java
-Clazz<Object> is not a superclass of Clazz<Integer>
+```
+Clazz<Object> is not a superclass for Clazz<Integer>
 ```
 
 #HSLIDE
@@ -351,26 +351,38 @@ interface List<E> extends Collection<E> {
 ```
 
 #HSLIDE
-### ArrayList. Internals
+### ArrayList. Internals #1
 
 ```java
 List<String> list = new ArrayList<>();
 ```
-<img src="lecture03/presentation/assets/img/newarray.png" alt="exception" style="width: 300px;"/>
+<img src="lecture03/presentation/assets/img/newarray.png" alt="exception" style="width: 600px;"/>
 
 ```java
 list.add("0");
 list.add("1");
 ```
 
-<img src="lecture03/presentation/assets/img/array1.png" alt="exception" style="width: 300px;"/>
+<img src="lecture03/presentation/assets/img/array1.png" alt="exception" style="width: 600px;"/>
 
 ```java
 list.addAll(Arrays.asList("2","3", "4", "5", "6", "7", "8"));
 list.add("9");
 ```
 
-<img src="lecture03/presentation/assets/img/array9.png" alt="exception" style="width: 300px;"/>
+<img src="lecture03/presentation/assets/img/array9.png" alt="exception" style="width: 600px;"/>
+
+#HSLIDE
+### ArrayList. Internals #1
+```java
+list.add("10");
+```
+Not enough capacity. Need (auto)resize.
+
+<img src="lecture03/presentation/assets/img/arrayresized.png" alt="exception" style="width: 600px;"/>
+
+<img src="lecture03/presentation/assets/img/array10.png" alt="exception" style="width: 600px;"/>
+
 
 #HSLIDE
 ### Summary
