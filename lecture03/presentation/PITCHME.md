@@ -350,6 +350,7 @@ interface List<E> extends Collection<E> {
 }
 ```
 
+
 #HSLIDE
 ### ArrayList. Internals #1
 
@@ -365,6 +366,9 @@ list.add("1");
 
 <img src="lecture03/presentation/assets/img/array1.png" alt="exception" style="width: 600px;"/>
 
+
+#HSLIDE
+### ArrayList. Internals #2
 ```java
 list.addAll(Arrays.asList("2","3", "4", "5", "6", "7", "8"));
 list.add("9");
@@ -372,16 +376,17 @@ list.add("9");
 
 <img src="lecture03/presentation/assets/img/array9.png" alt="exception" style="width: 600px;"/>
 
+
 #HSLIDE
-### ArrayList. Internals #1
+### ArrayList. Internals #3
 ```java
 list.add("10");
 ```
 Not enough capacity. Need (auto)resize.
 
-<img src="lecture03/presentation/assets/img/arrayresized.png" alt="exception" style="width: 600px;"/>
+<img src="lecture03/presentation/assets/img/arrayresized.png" alt="exception" style="width: 750px;"/>
 
-<img src="lecture03/presentation/assets/img/array10.png" alt="exception" style="width: 600px;"/>
+<img src="lecture03/presentation/assets/img/array10.png" alt="exception" style="width: 750px;"/>
 
 
 #HSLIDE
