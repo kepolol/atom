@@ -13,7 +13,7 @@ https://atom.mail.ru/
 ### get ready
 ```bash
 > git fetch upstream
-> git checkout -b lecture03 upstream/lecture02
+> git checkout -b lecture03 upstream/lecture03
 ```
 
 #HSLIDE
@@ -83,9 +83,9 @@ Throwable(String message)
 Throwable(Throwable cause)
 Throwable(String message, Throwable cause)
 
-getStackTrace()
-getMessage()
-getCause()
+StackTraceElement getStackTrace()
+Message getMessage()
+Throwable getCause()
 ```
 
 #HSLIDE
@@ -301,7 +301,76 @@ Clazz<Object> is not a superclass of Clazz<Integer>
 1. Homework 2
 
 
+#HSLIDE
+### Quiz  
+```java
+List<Integer> list = new ArrayList<>();
+list.add(1);
+list.add(2);
+list.addAll(Arrays.asList(2, 3, 4, 5, 6));
+list.remove(new Integer(2));
 
+assertThat(list.size(), is(equalTo( ??? )));
+assertThat(list.get(2), is(equalTo( ??? )));
+assertThat(list.contains(42), is( ??? ));
+```
+
+#HSLIDE
+### ArrayList. Summary
+- Auto resizable-array implementation of the `List` interface. e.g. dynamic array
+- Place in hierarchy:
+```java
+    java.lang.Object
+        java.util.AbstractCollection<E>
+            java.util.AbstractList<E>
+                java.util.ArrayList<E>
+```
+- Providing interfaces
+    - List 
+    - RandomAccess
+    - Serializable 
+    - Cloneable
+    - Collection
+    - Iterable
+
+[Read more (RU)](https://habrahabr.ru/post/128269/)
+
+
+#HSLIDE
+### ArrayList is a List
+List is a Ordered Collection or sequence
+```java
+interface List<E> extends Collection<E> {
+    E get(int index);
+    E set(int index, E element);
+    void add(int index, E element);
+    E remove(int index);
+    List<E> subList(int fromIndex, int toIndex);
+    // ...
+}
+```
+
+#HSLIDE
+### ArrayList. Internals
+
+```java
+List<String> list = new ArrayList<>();
+```
+<img src="lecture03/presentation/assets/img/newarray.png" alt="exception" style="width: 300px;"/>
+
+```java
+list.add("0");
+list.add("1");
+```
+
+<img src="lecture03/presentation/assets/img/array1.png" alt="exception" style="width: 300px;"/>
+
+```java
+list.addAll(Arrays.asList("2","3", "4", "5", "6", "7", "8"));
+list.add("9");
+```
+
+<img src="lecture03/presentation/assets/img/array9.png" alt="exception" style="width: 300px;"/>
 
 #HSLIDE
 ### Summary
