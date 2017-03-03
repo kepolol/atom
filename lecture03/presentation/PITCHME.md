@@ -1,44 +1,163 @@
 #HSLIDE
 # Java
-lecture 2
+lecture 3
 ## Basics
+
 
 #HSLIDE
 ## Отметьтесь на портале
 https://atom.mail.ru/
 
-#HSLIDE
-### About me
-<img src="https://avatars2.githubusercontent.com/u/710546?v=3&s=460" alt="me" style="width: 200px;"/>
-    
-- yan.brikl@gmail.com 
-- [https://github.com/rybalkinsd](https://github.com/rybalkinsd)
-- Java 5+ years
-- Yandex, Allods Team (mail.ru group)
-- Currently Senior Software Engineer at AliExpress.com
-
-**Люблю зеленые билды**  
 
 #HSLIDE
 ### get ready
 ```bash
 > git fetch upstream
-> git checkout -b lecture02 upstream/lecture02
+> git checkout -b lecture03 upstream/lecture02
 ```
 
 #HSLIDE
 ### Agenda
-1. Classes and objects
-1. Inheritance
-1. Interface and abstract class
-1. Enum
+1. External libraries usage
+1. Exceptions
+1. Templates
+1. Collection
+1. Homework 2
+
 
 #HSLIDE
-### Classes and objects
-1. **[Classes and objects]**  
-1. Inheritance
-1. Interface and Abstract class
-1. Enum
+### External libraries usage
+1. **[External libraries usage]**
+1. Exceptions
+1. Templates
+1. Collection
+1. Homework 2
+
+
+#HSLIDE
+### External libraries usage
+1. External libraries usage
+1. **[Exceptions]**
+1. Templates
+1. Collection
+1. Homework 2
+
+
+#HSLIDE
+### Anything that can go wrong will go wrong
+
+- lost connection
+- inconsistent object state
+- out of memory
+- file not found
+
+
+#HSLIDE
+### Some problems could be fixed in runtime
+Recovery:
+- reconnect
+- fix/rebuild object
+- free some memory
+- create new file
+
+or
+- cancel operations
+
+
+#HSLIDE
+### Exceptions hierarchy
+<img src="lecture03/presentation/assets/img/exception.png" alt="exception" style="width: 750px;"/>
+
+
+#HSLIDE
+##Checked exceptions must be handled 
+
+#HSLIDE
+### Throwable
+
+Superclass of all errors and exceptions
+
+```java
+Throwable()
+Throwable(String message)
+Throwable(Throwable cause)
+Throwable(String message, Throwable cause)
+
+getStackTrace()
+getMessage()
+getCause()
+```
+
+#HSLIDE
+### Stacktrace
+
+```java
+Exception in thread "main" java.lang.NullPointerException: Ой всё
+        at ru.atom.makejar.HelloWorld.getHelloWorld(HelloWorld.java:12)
+        at ru.atom.makejar.HelloWorld.main(HelloWorld.java:8)
+
+```
+
+Build and run jar with
+```java
+package ru.atom.makejar;
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println(getHelloWorld());
+    }
+
+    public static String getHelloWorld() {
+        throw new NullPointerException("Ой всё");
+    }
+}
+```
+
+#HSLIDE
+### Exception handling 
+### try-catch-finally
+```java
+try {
+    statements
+} catch (ExceptionType1 e) {
+    statements
+// more catches    
+} catch (ExceptionType2 e) {
+    statements
+} finally {
+    statments
+}
+```
+
+
+#HSLIDE
+### Exception handling example
+```java
+try {
+    String possibleInt = "itsNotANumber";
+    return Integer.parseInt(possibleInt);
+} catch (ExceptionType e) {
+    log.error("Exception in possibleInt parsing. {} is not an integer", possibleInt);
+    return DEFAULT_INT_VALUE; 
+} finally {
+    if (dbConnection != null 
+        && dbConnection.isOpened()) {
+        
+        dbConnection.close();
+    }
+}
+```
+
+
+#HSLIDE
+### Exceptions
+@See ru.atom.exception
+
+1. try-catch-finally
+1. catch or throws
+1. multiple catches
+1. try with resources
+
 
 #HSLIDE 
 ### Flashback
