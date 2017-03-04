@@ -593,12 +593,12 @@ List<String> list = new LinkedList<>();
 
 <img src="lecture03/presentation/assets/img/linkednew.png" alt="exception" style="width: 400px;"/>
 
-```java
-list.add("0");
-```
 
 #HSLIDE
 ### LinkedList internals #2
+```java
+list.add("0");
+```
 
 Allocation
 
@@ -693,6 +693,7 @@ depending on which constructor is used.
 ### TreeSet. Internals
 <img src="lecture03/presentation/assets/img/treeset.png" alt="exception" style="width: 600px;"/>
 
+[Read more (RU)](https://habrahabr.ru/post/65617/)
 
 #HSLIDE
 ### Functional interface Comparable<T>
@@ -730,9 +731,9 @@ What about null?
 interface Map<K, V>
 ``` 
 
-An object that maps keys to values
-Cannot contain duplicate keys
-each key map to at most one value
+An object that maps keys to values.
+Cannot contain duplicate keys.
+Each key map to at most one value.
  
 
 #HSLIDE
@@ -751,9 +752,9 @@ Why Map is not a Collection?
 #HSLIDE
 ### Why, Map?
 From official FAQ:
->> This was by design.
->> We feel that mappings are not collections and collections are not mappings. 
->> If a Map is a Collection, what are the elements? 
+> This was by design.
+> We feel that mappings are not collections and collections are not mappings. 
+> If a Map is a Collection, what are the elements? 
 
 
 #HSLIDE
@@ -779,12 +780,18 @@ HashMap
 | O(1)       | O(1)  |  O(1) | O(1)  |
 
 
-HashSet
+TreeMap
 
 |  containsKey  | get   | put   | remove |
 |:----------:|:-----:|:-----:|:------:|
 | O(log(n))       | O(log(n))  |  O(log(n)) | O(log(n))  |
 
+[Read more](http://infotechgems.blogspot.ru/2011/11/java-collections-performance-time.html)
+
+
+#HSLIDE
+### HashMap. Internals 
+<img src="lecture03/presentation/assets/img/hashmap.png" alt="exception" style="width: 750px;"/>
 
 #HSLIDE
 ### Summary
