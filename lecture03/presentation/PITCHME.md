@@ -651,8 +651,46 @@ Linking
 
 
 #HSLIDE
-### Maps
+### HashSet
+Set interface implementation, backed by a hash table (actually a HashMap instance).
+It makes no guarantees as to the iteration order of the set.
 
+
+#HSLIDE
+### HashSet. Internals
+<img src="lecture03/presentation/assets/img/hashset.png" alt="exception" style="width: 600px;"/> 
+ 
+
+#HSLIDE
+### General contract
+For objects **a** and **b**:
+```java
+a.equals(b) => a.hashCode() == b.hashCode()
+
+if a.hashCode() == b.hashCode() 
+          a may be not equal b
+          
+a.hashcode() is the same during object lifetime
+```
+
+
+#HSLIDE
+### HashSet. Complexity
+
+|  contains  | add   | get   | remove | 
+|:----------:|:-----:|:-----:|:------:|
+| O(1)       | O(1)  |  O(1) |  O(1)  |
+
+
+#HSLIDE
+### TreeSet
+The elements are ordered using their **Comparable** natural 
+ordering, or by **Comparator** provided at set creation time, 
+depending on which constructor is used.
+
+#HSLIDE
+### TreeSet. Internals
+<img src="lecture03/presentation/assets/img/treeset.png" alt="exception" style="width: 600px;"/>
 
 
 #HSLIDE
@@ -661,6 +699,7 @@ Linking
 1. Do not use System.out.println()
 1. Use logger
 1. Use most appropriate data structure
+1. General contract
 
 
 #HSLIDE
