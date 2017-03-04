@@ -543,12 +543,23 @@ List implementations:
 
 
 #HSLIDE
-### CopyOnWriteArrayList. Complexity
-    
+### CopyOnWriteArrayList
+A **thread-safe** variant of ArrayList in which all mutative
+operations (**add**, **set**, and so on) are implemented by
+making a fresh copy of the underlying array.
+
+Complexity    
 |  contains  | add   | get   |  set  | remove | 
 |:----------:|:-----:|:-----:|:-----:|:------:|
 | O(n)       | O(n)  |  O(1) |  O(n) | O(n)   |
 
+
+#HSLIDE
+### LinkedList
+
+Doubly-linked list implementation of the {@code List} and {@code Deque}
+interfaces.  Implements all optional list operations, and permits all
+elements (including {@code null}).
 
 #HSLIDE
 ### Summary
