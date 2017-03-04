@@ -630,7 +630,17 @@ Linking
 
 
 #HSLIDE
+### 
+
+
+
+#HSLIDE
 ### Summary
+1. Generics are **compile-time**
+1. Do not use System.out.println()
+1. Use logger
+1. Use most appropriate data structure
+
 
 #HSLIDE
 **Оставьте обратную связь**
