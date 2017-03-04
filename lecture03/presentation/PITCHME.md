@@ -51,13 +51,10 @@ include 'homeworks/HW1'
 ### build.gradle
 Project(subproject) build configuration
 
-**ext** - set of global variables
-
-**ext.libraries** - map<key -> value> of most common(for our project) libraries
-
-**allprojects** block - instruction for all projects
-
-**subprojects** block - instructions for all target's subprojects
+- **ext** - set of global variables
+- **ext.libraries** - map of most common(for our project) libraries
+- **allprojects** block - instruction for all projects
+- **subprojects** block - instructions for all target's subprojects
 
 
 #HSLIDE
@@ -404,7 +401,7 @@ assertThat(list.contains(42), is( ??? ));
 
 #HSLIDE
 ### ArrayList. Summary
-- Auto resizable-array implementation of the `List` interface. e.g. dynamic array
+- Auto resizable-array implementation of the `List` interface. i.e. dynamic array
 - Place in hierarchy:
 ```java
     java.lang.Object
@@ -520,7 +517,7 @@ interface Collection<E> extends Iterable<E> {
 ```java
 interface Iterable<T> {
     Iterator<T> iterator();
-    E next();
+    default void forEach(Consumer<? super T> action) { ... }
 }
 
 interface Iterator<E> {
