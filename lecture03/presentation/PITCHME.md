@@ -33,6 +33,93 @@ https://atom.mail.ru/
 1. Collections
 1. Homework 2
 
+#HSLIDE
+### settings.gradle
+Declares the configuration required to instantiate and configure the hierarchy of Project instances which are to participate in a build.
+
+```groovy
+rootProject.name = 'atom'
+// subproject includes
+include 'lecture01'
+include 'lecture02'
+include 'lecture03'
+
+include 'homeworks/HW1'
+```
+
+#HSLIDE
+### build.gradle
+Project(subproject) build configuration
+
+**ext** - set of global variables
+
+**ext.libraries** - map<key -> value> of most common(for our project) libraries
+
+**allprojects** block - instruction for all projects
+
+**subprojects** block - instructions for all target's subprojects
+
+
+#HSLIDE
+### dependencies
+We need tests(junit) only on testCompile stage
+```groovy
+dependencies {
+    testCompile rootProject.libraries.junit 
+}
+```
+
+#HSLIDE
+### New dependency from "project common"
+Now we want to add logging to our subproject.
+
+There is **log4j** in our `ext.libraries`
+```groovy
+ext.libraries = [
+        //...
+        log4j: [
+            "org.apache.logging.log4j:log4j-api:$log4jVersion",
+            "org.apache.logging.log4j:log4j-core:$log4jVersion"
+        ]
+        //...
+```
+
+Lets use it
+```groovy
+dependencies {
+    testCompile rootProject.libraries.junit
+    compile rootProject.libraries.log4j
+}
+```
+
+
+#HSLIDE
+### log4j
+Usage
+```java
+class A {
+    private static final Logger log = LogManager.getLogger(A.class);
+    
+    public A() {
+        log.info("A class constructor.");
+    }
+}
+```
+
+**Note:** to use log4j you also have to create `lo4j2.properties` in resources folder 
+
+
+#HSLIDE
+### New dependency from worldwide
+```groovy
+dependencies {
+    testCompile rootProject.libraries.junit
+    compile group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.6'
+}
+```
+
+**Tip**: extract versions to variables 
+
 
 #HSLIDE
 ### External libraries usage
@@ -370,7 +457,7 @@ list.add("1");
 #HSLIDE
 ### ArrayList. Internals #2
 ```java
-list.addAll(Arrays.asList("2","3", "4", "5", "6", "7", "8"));
+list.addAll(Arrays.asList("2", "3", "4", "5", "6", "7", "8"));
 list.add("9");
 ```
 
@@ -387,6 +474,83 @@ Not enough capacity. Need (auto)resize.
 <img src="lecture03/presentation/assets/img/arrayresized.png" alt="exception" style="width: 750px;"/>
 
 <img src="lecture03/presentation/assets/img/array10.png" alt="exception" style="width: 750px;"/>
+
+#HSLIDE
+### Quiz
+#### What is the difference between capacity and size in `ArrayList`?
+
+#HSLIDE
+### ArrayList. Complexity
+
+|  contains  | add   | get   |  set  | remove | 
+|:----------:|:-----:|:-----:|:-----:|:------:|
+| O(n)       | O(1)* |  O(1) |  O(1) | O(n)   |
+
+
+#HSLIDE
+### ArrayList is a RandomAccess List
+
+RandomAccess - marker interface.
+Indicate that List support fast (generally constant time) random access.
+
+For generics algorithms.
+
+
+#HSLIDE
+### List is a Collection
+
+Collection is a root interface of Collection Framework.
+
+Collection represents a group of objects.
+
+```java
+interface Collection<E> extends Iterable<E> {
+    int size();
+    
+    boolean contains(Object o);
+    boolean add(E e);
+    boolean remove(Object o);
+    Iterator<E> iterator();
+}
+```
+
+
+#HSLIDE
+### Collection is an Iterable
+```java
+interface Iterable<T> {
+    Iterator<T> iterator();
+    E next();
+}
+
+interface Iterator<E> {
+    boolean hasNext();
+    E next();
+}
+```
+
+
+#HSLIDE
+### Single interface - multiple implementations #1
+<img src="lecture03/presentation/assets/img/collectionimpl.png" alt="exception" style="width: 750px;"/>
+
+
+#HSLIDE
+### Single interface - multiple implementations #2
+List implementations:
+- ArrayList
+- CopyOnWriteArrayList - thread-safe variant of ArrayList
+- LinkedList
+- Vector - synchronized list
+- ...
+
+
+#HSLIDE
+### CopyOnWriteArrayList. Complexity
+    
+|  contains  | add   | get   |  set  | remove | 
+|:----------:|:-----:|:-----:|:-----:|:------:|
+| O(n)       | O(n)  |  O(1) |  O(n) | O(n)   |
 
 
 #HSLIDE
