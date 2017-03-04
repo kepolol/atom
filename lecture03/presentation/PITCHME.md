@@ -597,28 +597,31 @@ List<String> list = new LinkedList<>();
 list.add("0");
 ```
 
+#HSLIDE
+### LinkedList internals #2
+
 Allocation
 
 <img src="lecture03/presentation/assets/img/linked0.png" alt="exception" style="width: 400px;"/>
 
 Linking
 
-<img src="lecture03/presentation/assets/img/linked0linked.png" alt="exception" style="width: 600px;"/>
+<img src="lecture03/presentation/assets/img/linked0linked.png" alt="exception" style="width: 400px;"/>
 
 
 #HSLIDE
-### LinkedList internals #2
+### LinkedList internals #3
 ```java
 list.add("1");
 ```
 
 Allocation
 
-<img src="lecture03/presentation/assets/img/linked1.png" alt="exception" style="width: 600px;"/>
+<img src="lecture03/presentation/assets/img/linked1.png" alt="exception" style="width: 400px;"/>
 
 Linking
 
-<img src="lecture03/presentation/assets/img/linked1linked.png" alt="exception" style="width: 600px;"/>
+<img src="lecture03/presentation/assets/img/linked1linked.png" alt="exception" style="width: 400px;"/>
 
 
 #HSLIDE
@@ -630,7 +633,25 @@ Linking
 
 
 #HSLIDE
-### 
+### Interface Set
+-  A collection that contains no duplicate elements.  More formally, sets
+   contain no pair of elements **e1** and **e2** such that
+    ```java
+       e1.equals(e2);
+    ```
+    
+- Implementations
+    - HashSet 
+    - TreeSet
+    - EnumSet 
+    - ConcurrentSkipListSet 
+    - CopyOnWriteArraySet 
+    - LinkedHashSet
+    - ...
+
+
+#HSLIDE
+### Maps
 
 
 
