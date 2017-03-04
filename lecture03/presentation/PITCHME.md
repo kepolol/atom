@@ -724,8 +724,67 @@ What about null?
 
 
 #HSLIDE
-### 
+### Map 
+
+```java
+interface Map<K, V>
+``` 
+
+An object that maps keys to values
+Cannot contain duplicate keys
+each key map to at most one value
  
+
+#HSLIDE
+### Map methods
+ ```java
+boolean containsKey(Object key);
+V get(Object key);
+V put(K key, V value);
+V remove(Object key);
+```
+
+#HSLIDE
+### Why, Map?
+Why Map is not a Collection?
+
+#HSLIDE
+### Why, Map?
+From official FAQ:
+>> This was by design.
+>> We feel that mappings are not collections and collections are not mappings. 
+>> If a Map is a Collection, what are the elements? 
+
+
+#HSLIDE
+### Map implementations
+- HashMap
+- TreeMap
+- LinkedHashMap
+- EnumMap
+
+
+#HSLIDE
+### Notes
+1.HashSet is cutted HashMap
+1. TreeSet is cutted TreeMap 
+
+
+#HSLIDE
+### Complexity
+HashMap
+
+|  containsKey  | get   | put   | remove | 
+|:----------:|:-----:|:-----:|:------:|
+| O(1)       | O(1)  |  O(1) | O(1)  |
+
+
+HashSet
+
+|  containsKey  | get   | put   | remove |
+|:----------:|:-----:|:-----:|:------:|
+| O(log(n))       | O(log(n))  |  O(log(n)) | O(log(n))  |
+
 
 #HSLIDE
 ### Summary
