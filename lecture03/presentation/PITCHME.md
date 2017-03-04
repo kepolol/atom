@@ -119,7 +119,7 @@ dependencies {
 
 
 #HSLIDE
-### External libraries usage
+### Exceptions
 1. External libraries usage
 1. **[Exceptions]**
 1. Generics
@@ -209,7 +209,7 @@ try {
 } catch (ExceptionType2 e) {
     statements
 } finally {
-    statments
+    statements
 }
 ```
 
@@ -493,7 +493,7 @@ Not enough capacity. Need (auto)resize.
 RandomAccess - marker interface.
 Indicate that List support fast (generally constant time) random access.
 
-For generics algorithms.
+RandomAccess helps generics algorithms.
 
 
 #HSLIDE
@@ -551,7 +551,8 @@ A **thread-safe** variant of ArrayList in which all mutative
 operations (**add**, **set**, and so on) are implemented by
 making a fresh copy of the underlying array.
 
-Complexity    
+Complexity
+
 |  contains  | add   | get   |  set  | remove | 
 |:----------:|:-----:|:-----:|:-----:|:------:|
 | O(n)       | O(n)  |  O(1) |  O(n) | O(n)   |
@@ -590,14 +591,18 @@ java.lang.Object
 List<String> list = new LinkedList<>();
 ```
 
-<img src="lecture03/presentation/assets/img/linkednew.png" alt="exception" style="width: 600px;"/>
+<img src="lecture03/presentation/assets/img/linkednew.png" alt="exception" style="width: 400px;"/>
 
 ```java
 list.add("0");
 ```
+
 Allocation
-<img src="lecture03/presentation/assets/img/linked0.png" alt="exception" style="width: 600px;"/>
+
+<img src="lecture03/presentation/assets/img/linked0.png" alt="exception" style="width: 400px;"/>
+
 Linking
+
 <img src="lecture03/presentation/assets/img/linked0linked.png" alt="exception" style="width: 600px;"/>
 
 
@@ -608,8 +613,11 @@ list.add("1");
 ```
 
 Allocation
+
 <img src="lecture03/presentation/assets/img/linked1.png" alt="exception" style="width: 600px;"/>
+
 Linking
+
 <img src="lecture03/presentation/assets/img/linked1linked.png" alt="exception" style="width: 600px;"/>
 
 
