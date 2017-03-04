@@ -400,7 +400,7 @@ assertThat(list.contains(42), is( ??? ));
 ```
 
 #HSLIDE
-### ArrayList. Summary
+### ArrayList. Summary #1
 - Auto resizable-array implementation of the `List` interface. i.e. dynamic array
 - Place in hierarchy:
 ```java
@@ -409,6 +409,9 @@ assertThat(list.contains(42), is( ??? ));
             java.util.AbstractList<E>
                 java.util.ArrayList<E>
 ```
+
+#HSLIDE
+### ArrayList. Summary #2
 - Providing interfaces
     - List 
     - RandomAccess
@@ -555,11 +558,68 @@ Complexity
 
 
 #HSLIDE
-### LinkedList
+### LinkedList. Summery #1
+- Doubly-linked list implementation of the **List** and **Deque**
+interfaces.
 
-Doubly-linked list implementation of the {@code List} and {@code Deque}
-interfaces.  Implements all optional list operations, and permits all
-elements (including {@code null}).
+- Place in hierarchy:
+```java
+java.lang.Object
+    java.util.AbstractCollection<E>
+        java.util.AbstractList<E>
+            java.util.AbstractSequentialList<E>
+                java.util.LinkedList<E>
+```
+
+
+#HSLIDE
+### ArrayList. Summary #2
+- Providing interfaces
+    - List
+    - Deque
+    - Queue
+    - Serializable 
+    - Cloneable
+    - Iterable 
+    - Collection
+
+
+#HSLIDE
+### LinkedList internals #1
+```java
+List<String> list = new LinkedList<>();
+```
+
+<img src="lecture03/presentation/assets/img/linkednew.png" alt="exception" style="width: 600px;"/>
+
+```java
+list.add("0");
+```
+Allocation
+<img src="lecture03/presentation/assets/img/linked0.png" alt="exception" style="width: 600px;"/>
+Linking
+<img src="lecture03/presentation/assets/img/linked0linked.png" alt="exception" style="width: 600px;"/>
+
+
+#HSLIDE
+### LinkedList internals #2
+```java
+list.add("1");
+```
+
+Allocation
+<img src="lecture03/presentation/assets/img/linked1.png" alt="exception" style="width: 600px;"/>
+Linking
+<img src="lecture03/presentation/assets/img/linked1linked.png" alt="exception" style="width: 600px;"/>
+
+
+#HSLIDE
+### LinkedList. Complexity
+
+|  contains  | add   | get   |  set  | remove | 
+|:----------:|:-----:|:-----:|:-----:|:------:|
+| O(n)       | O(1)  |  O(n) |  O(n) | O(n)   |
+
 
 #HSLIDE
 ### Summary
