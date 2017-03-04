@@ -688,10 +688,44 @@ The elements are ordered using their **Comparable** natural
 ordering, or by **Comparator** provided at set creation time, 
 depending on which constructor is used.
 
+
 #HSLIDE
 ### TreeSet. Internals
 <img src="lecture03/presentation/assets/img/treeset.png" alt="exception" style="width: 600px;"/>
 
+
+#HSLIDE
+### Functional interface Comparable<T>
+
+```java
+@Override
+public int compareTo(T o) {
+	return this.field – o.field;
+}
+```
+
+
+#HSLIDE
+### compareTo & equals
+Any type of contract?
+```java
+a.equals(b) == true => a.compareTo(b) == 0
+``` 
+
+What about null?
+
+
+#HSLIDE
+### HashSet. Complexity
+
+|  contains  | add   | get   | remove | 
+|:----------:|:-----:|:-----:|:------:|
+| O(log(n))       | O(log(n))  |  O(log(n)) | O(log(n))  |
+
+
+#HSLIDE
+### 
+ 
 
 #HSLIDE
 ### Summary
